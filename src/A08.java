@@ -7,11 +7,12 @@ public class A08 {
         int W = sc.nextInt();
         int R[][] = new int[H + 1][W + 1];
         //R[1][0] = 0;
-        int tmp = 0;
         for (int i = 1; i < H + 1; i++) {
+            int tmp = 0;
             for (int j = 1; j < W + 1; j++) {
                 R [i][j] = tmp + sc.nextInt();
                 tmp = R[i][j];
+                R[i][j] += R[i - 1][j];
             }
         }
         int Q = sc.nextInt();
